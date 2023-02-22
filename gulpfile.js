@@ -19,7 +19,8 @@ function css( done ) {
 
   src( "src/scss/app.scss" )
     .pipe( sourcemaps.init() )
-    .pipe( sass() ) // {outputStyle: expanded}, compressed
+    .pipe( sass() ) //{outputStyle: expanded}, compressed
+    // .pipe(sass({ outputStyle: 'expanded' }))
     .pipe( postcss( [autoprefixer(), cssnano()] ) )
     .pipe( sourcemaps.write(".") )
     .pipe( dest("build/css") );
